@@ -21,7 +21,7 @@
 */
 
 var iFileName = "5.5ePugilist.js";
-RequiredSheetVersion(13.2.3);
+RequiredSheetVersion(13.2);
 
 ClassList["pugilist"] = {
 	regExpSearch : /pugilist/i,
@@ -64,7 +64,7 @@ ClassList["pugilist"] = {
             ],
             additional: levels.map(function(n) {
                 if (n < 17){
-                    return "1d" + (n < 5 ? 8 : n < 11 ? 10 : n < 17 ? 12);
+                    return "1d" + (n < 5 ? 8 : n < 11 ? 10 : n < 17 ? 12: 12);
                 }
                 else {
                     return "2d6"
@@ -318,13 +318,13 @@ AddSubClass("pugilist", "piss and vinegar", {
         	description: desc([
                 "You gain proficiency in the Intimidation skill if you don't have it already. Additionally, you gain a bonus to checks using this skill equal to your Strength modifier (minimum bonus of +1).",
             ]),
-			skills: ["Intimidation"]
+			skills: ["Intimidation"],
 			addMod: [
 				{type: "skill", field: "Intimidation", mod: "Str", text: "you gain a bonus to checks using Intimidation equal to your Strength modifier (minimum bonus of +1)."}
 			]
         },
         "subclassfeature3.1": {
-            name: "salty salute",
+            name: "Salty Salute",
             source: [
             	["BH:PC", 6]
             ],
@@ -339,9 +339,9 @@ AddSubClass("pugilist", "piss and vinegar", {
             ]),
         },
         "subclassfeature7": {
-            name: "dirty tricks",
+            name: "Dirty Tricks",
             source: [
-                ["FRHoF", 22]
+                ["BH:PC", 6]
             ],
             minlevel: 6,
 			extraLimitedFeatures : [
@@ -373,31 +373,46 @@ AddSubClass("pugilist", "piss and vinegar", {
             ]),
         },
         "subclassfeature11": {
-            name: "Chilling Retribution",
+            name: "Mean Old Cuss",
             source: [
-                ["FRHoF", 22]
+                ["BH:PC", 6]
             ],
             minlevel: 11,
-            usages: "Wisdom modifier per ",
-            usagescalc: "event.value = Math.max(1, What('Wis Mod'));",
-            recovery: "long rest",
-            description: desc([
-                "When a crea hits me with an attack roll, I can use a Rea to force the crea to make a Wis save vs my Spell Save DC. On a fail, the target has the Stunned condition until my next turn ends. While the target is Stunned, its Speed is reduced to 0 ft.",
+            usages : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+			altResource : "3 Moxie Points",
+    		recovery: "short rest",
+            action: [
+                ["bonus action", ""]
+            ],
+			description: desc([
+                "You can offend every creature in the room with the flick of a wrist and a few curt words. As a Bonus Action, you can choose a number of targets within 30 feet of yourself that can see or hear you up to your level in this class. Each chosen creature must succeed on a Wisdom saving throw or take Psychic damage equal to a roll of your Fisticuffs die plus your Constitution modifier and have Disadvantage on attack rolls it makes against creatures other than you until the start of your next turn.",
+				"Once you use this feature, you must finish a Short or Long Rest before you use it again. You can also restore your use of it by expending 3 Moxie Points (no action required)."
             ]),
         },
         "subclassfeature15": {
-            name: "Frozen Haunt",
+            name: "Dirtier Tricks",
             source: [
-                ["FRHoF", 2]
+                ["BH:PC", 6]
             ],
             minlevel: 17,
-            usages: 1,
-            recovery: "long rest",
-            altResource: "SS 4+",
+            extraLimitedFeatures : [
+				{
+				name : "Rabbit Punch", 
+				usages : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1], 
+				recovery : "Rabbit Punch", 
+				
+				},
+				{
+				name : "Low Blow", 
+				usages : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1], 
+				recovery : "short rest", 
+				},
+				
+			],
             description: desc([
-                "Once per Long Rest when I cast Hunter's Mark, I can adopt a ghostly, snowy form. It lasts until the spell ends, giving me the following benefits. I can regain my use of this feature by expending a lvl 4+ Spell slot (no action needed).",
-                "**Frozen Soul**. I have Immunity to Cold damage. When I adopt this form and at the start of each of my turns, each crea I choose in a 15-ft Emanation from me takes 2d4 Cold dmg.",
-                "**Partially Incorporeal**. I have Immunity to the Grappled, Prone, and Restrained conditions. I can move through creatures and objects as if Difficult Terrain, but take 1d10 Force dmg if I end my turn inside them. If the form ends when I'm inside a crea or object, I move to the nearest empty space.",
+                "You gain the following additional Dirty Tricks. You can use one Dirty Trick each turn, and once you use a dirty trick, you can't use that trick again until you finish a Short or Long Rest.",
+                "Rabbit Punch. When you hit a creature with an Unarmed Strike or a Pugilist weapon, you strike its head. Until the end of your next turn, the creature loses Resistance to Psychic damage if it has it and has Disadvantage on saving throws.",
+                "Rabbit Punch. When you hit a creature with an Unarmed Strike or Pugilist weapon, you can turn the hit into a Critical Hit. For this Critical Hit, you roll the attack's damage dice three times and add them together, instead of twice as normal.",
             ]),
         },
     },
