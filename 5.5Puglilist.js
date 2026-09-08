@@ -50,7 +50,7 @@ ClassList["pugilist"] = {
         "\n \u2022 Gaming set;" +
         "\n \u2022 An Dungeoneer's Pack, and 31 gp." +
         "\n\nAlternatively, choose 50 gp worth of starting equipment instead of the class's starting equipment.",
-    subclasses : ["Fight Club", ["club of the dog and hound", "club of piss and vinegar","club of the squared circle", "club of sweet science", "club of the hand of dread", "club of the street saint" ]],
+    subclasses : ["Fight Club", []],
 	attacks : [1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
 	features : {
 		 "fisticuffs": {
@@ -81,7 +81,7 @@ ClassList["pugilist"] = {
             calcChanges: {
                 atkAdd: [
                     function(fields, v) {
-                        if (classes.known.pugilist && classes.known.pugilist.level && ( v.baseWeaponName == "unarmed strike" || (/improvised/i).test(v.WeaponName + v.baseWeaponName) || (/improvised weapon/i).test(v.theWea.type) || (isMeleeWeapon && (/simple/i).test(theWea.type)))) {
+                        if (classes.known.pugilist && classes.known.pugilist.level && ( v.baseWeaponName == "unarmed strike" || (/improvised/i).test(v.WeaponName + v.baseWeaponName) || (/improvised weapon/i).test(v.theWea.type) || (v.isMeleeWeapon && (/simple/i).test(theWea.type)))) {
                             //v.theWea.monkweapon = true;
                             var aPugilistDie = function(n) {
                                 return n < 5 ? 8 : n < 11 ? 10 : n < 17 ? 12 : 6;
@@ -304,7 +304,7 @@ ClassList["pugilist"] = {
 
 AddSubClass("pugilist", "piss and vinegar", {
     regExpSearch : /^(((?=.*pugilist)(?=.*arena)(?=.*royale))|(?=.*luchador)).*$/i,
-	subname: "Dog and Hound",
+	subname: "piss and vinegar",
     source: [
         ["BH:PC", 6]
     ],
