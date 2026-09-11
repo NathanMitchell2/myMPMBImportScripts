@@ -434,7 +434,7 @@ AddSubClass("pugilist", "sqaured circle", {
         	description: desc([
                 "Choose the Acrobatics or Athletics skill. If you lack proficiency with the chosen skill, you gain proficiency in it, and if you already have proficiency in it, you gain Expertise in it.",
             ]),
-			skillstxt: "Proficiency with Acrobatics or Athletics if you can the choosen skill. Expertise if you have proficiency."
+			skillstxt: "Proficiency with Acrobatics or Athletics if you can the choosen skill. Expertise if you have proficiency.",
 			
         },
         "subclassfeature3.1": {
@@ -444,7 +444,7 @@ AddSubClass("pugilist", "sqaured circle", {
             ],
             minlevel: 3,
 			description: desc([
-				"You gain the following benefits"
+				"You gain the following benefits",
                 "Compression Lock. When you start your turn with one or more creatures Grappled, you can deal Bludgeoning damage to each creature you have Grappled (no action required). The damage equals one roll of your Fisticuffs die plus your Strength modifier.",
 				"Inescapable. When a creature makes a saving throw or ability check against your grapple or shove DC, you can expend 1 Moxie Point to give that roll Disadvantage.",
 				"Stop and Drop. When you hit a creature with an Unarmed Strike and don't use a mastery property as part of the attack, you can use both the Grapple and Shove option."
