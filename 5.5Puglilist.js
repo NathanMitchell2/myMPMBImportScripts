@@ -1,25 +1,3 @@
-/*	-WHAT IS THIS?-
-	The script featured here is made as an optional addition to "MPMB's Character Record Sheet" found at http://flapkan.com/mpmb/dmsguild
-	You can add the content to the Character Sheet's functionality by adding the script below in the "Add Custom Script" dialogue.
-	-KEEP IN MIND-
-	Note that you can add as many custom codes as you want, but you have to add the code in at once (i.e. copy all the code into a single, long file and copy that into the sheet).
-	It is recommended to enter the code in a fresh sheet before adding any other information.
-*/
-
-/*	-INFORMATION-
-	Subject:	Class
-	Effect:		This script adds a class called "Pugilist" (v3.1) and the seven subclasses for it: "Club of the Arena Royale", "Club of the Bloodhound Bruisers", "Club of the Dog and Hound", "Club of the Piss and Vinegar", "Club of the Squared Circle", "Club of the Sweet Science" and "Club of the Whiskey Fist" from the Pugilist class PDF (2nd Anniversary Edition).
-				This is taken from the DMs Guild website (http://www.dmsguild.com/product/184921/)
-				This class and subclasses are made by Benjamin Huffman.
-				The 2nd Anniversary Edition includes the "Additional Fight Clubs for the Pugilist Class" (v2), which have now been merged with the base class, originally taken from http://www.dmsguild.com/product/186640/.
-	Code by:		Original script by tables-r-us & MorePurpleMoreBetter.
-					Updated to Pugilist v3.1 by FishyFing.
-	Code version:	v2
-	Date:			2019-01-05 (sheet v12.999)
-	Please support the creator of this content (Benjamin Huffman) and download his material from the DMs Guild website: http://www.dmsguild.com/browse.php?x=0&y=0&author=Benjamin%20Huffman
-	Please take note that some features of the Pugilist class are unique and not supported by the character sheet, such as adding Constitution modifier to AC instead of Dexterity when wearing light armour.
-*/
-
 var iFileName = "5.5ePugilist.js";
 RequiredSheetVersion(13.2);
 
