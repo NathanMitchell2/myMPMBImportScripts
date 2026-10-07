@@ -390,7 +390,75 @@ AddSubClass("pugilist", "piss and vinegar", {
             description: desc([
                 "You gain the following additional Dirty Tricks. You can use one Dirty Trick each turn, and once you use a dirty trick, you can't use that trick again until you finish a Short or Long Rest.",
                 "Rabbit Punch. When you hit a creature with an Unarmed Strike or a Pugilist weapon, you strike its head. Until the end of your next turn, the creature loses Resistance to Psychic damage if it has it and has Disadvantage on saving throws.",
-                "Rabbit Punch. When you hit a creature with an Unarmed Strike or Pugilist weapon, you can turn the hit into a Critical Hit. For this Critical Hit, you roll the attack's damage dice three times and add them together, instead of twice as normal.",
+                "Sucker Punch. When you hit a creature with an Unarmed Strike or Pugilist weapon, you can turn the hit into a Critical Hit. For this Critical Hit, you roll the attack's damage dice three times and add them together, instead of twice as normal.",
+            ]),
+        },
+    },
+});
+
+AddSubClass("pugilist", "sqaured circle", {
+    regExpSearch : /^(((?=.*pugilist)(?=.*arena)(?=.*royale))|(?=.*luchador)).*$/i,
+	subname: "sqaured circle",
+    source: [
+        ["BH:PC", 6]
+    ],
+    features: {
+        "subclassfeature3": {
+            name: "Muscle Mass",
+            source: [
+                ["BH:PC", 6]
+            ],
+            minlevel: 3,
+        	description: desc([
+                "Choose the Acrobatics or Athletics skill. If you lack proficiency with the chosen skill, you gain proficiency in it, and if you already have proficiency in it, you gain Expertise in it.",
+            ]),
+			skillstxt: "Proficiency with Acrobatics or Athletics if you can the choosen skill. Expertise if you have proficiency.",
+			
+        },
+        "subclassfeature3.1": {
+            name: "Groundwork",
+            source: [
+            	["BH:PC", 6]
+            ],
+            minlevel: 3,
+			description: desc([
+				"You gain the following benefits",
+                "Compression Lock. When you start your turn with one or more creatures Grappled, you can deal Bludgeoning damage to each creature you have Grappled (no action required). The damage equals one roll of your Fisticuffs die plus your Strength modifier.",
+				"Inescapable. When a creature makes a saving throw or ability check against your grapple or shove DC, you can expend 1 Moxie Point to give that roll Disadvantage.",
+				"Stop and Drop. When you hit a creature with an Unarmed Strike and don't use a mastery property as part of the attack, you can use both the Grapple and Shove option."
+            ]),
+        },
+        "subclassfeature7": {
+            name: "Meat Shield",
+            source: [
+                ["BH:PC", 6]
+            ],
+            minlevel: 6,
+            description: desc([
+                "While you have a creature Grappled, you gain Half Cover against attacks made by creatures you aren't Grappling. When a creature you aren't Grappling misses you with an attack roll, you can take a Reaction and expend 1 Moxie Point to force that creature make the same attack with a new attack roll against a creature you are Grappling.",
+			]),
+        },
+        "subclassfeature11": {
+            name: "Meat Shield",
+            source: [
+                ["BH:PC", 6]
+            ],
+            minlevel: 11,
+			description: desc([
+                "When you use the Grapple or Shove option of your Unarmed Strike, you count as being one size larger. Additionally, you don't have to spend extra movement to move a creature Grappled by you if the creature is your size or smaller."
+            ]),
+        },
+        "subclassfeature15": {
+            name: "Clean Finish",
+            source: [
+                ["BH:PC", 6]
+            ],
+            minlevel: 17,
+			usages : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+    		recovery: "long rest",
+            description: desc([
+                "When a creature ends its turn Grappled by you, you can take a Reaction to force it to make a Constitution saving throw against your grapple's escape DC or have the Incapacitated condition until the end of its next turn. If the creature is Bloodied and already Incapacitated by this feature, its Hit Points are reduced to 0 instead.",
+                "Once you use this feature to reduce a creature to 0 Hit Points, you can't use it again until you finish a Long Rest.",
             ]),
         },
     },
